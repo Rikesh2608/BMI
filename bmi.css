@@ -1,0 +1,203 @@
+body{
+    margin: 0;
+    background-color: #F63568;
+    font-family: Roboto;
+    overflow-y: hidden;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    font-family: 'Montaga';
+    text-align: center;
+    background-color: #F63568;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    margin-top: 0;
+    padding:15px;
+}
+
+h1,h2{  
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(32, 65, 114);
+    transition: .4s;
+}
+h1:hover,h2:hover{
+    transform: scale(1.1);
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+    margin-top: 60px;
+}
+
+.bmi-intro{
+    font-family: 'Montaga';
+    border-radius: 20px;
+    height: 25em;
+    padding: 20px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.bmi-intro div{
+    font-size: 1.1em;
+    color: rgb(104, 104, 104);
+}
+.img-container{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bmi-calc-container{
+    border-radius: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    margin-left: 40px;
+    background-color: white;
+}
+@media (max-width:850px) {
+    .main-grid{
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+    .bmi-intro,.bmi-calc-container{
+        margin: 20px 0px;
+    }
+    body{
+        overflow: auto;
+    }
+    .header{
+        margin:0 ;
+    }
+}
+
+.weight-container,.height-container{
+    font-family: cursive;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.weight-container div,.height-container div{
+    margin-left: 10px;
+}
+input:hover,select:hover{
+    transform: scale(1.1);
+    margin:0 10px;
+}
+input,select{
+    border:2px solid black;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 0.7em;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+select{
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 10px 2px;
+    color:rgb(32, 65, 114);
+}
+button{
+    cursor: pointer;
+    padding: 12px 40px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: #0b58f2;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+    transition: .1s;
+}
+button:hover{
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+.bmi-calc{
+    font-family: Arial, sans-serif;
+    transition: .7s;
+    color: white;
+}
+option{
+    color: black;
+}
+i{
+    margin-left: 10px;
+}
+
+.result-container{
+    background-color: #F63568;
+    border-radius: 10px;
+    border-top-right-radius: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    transition: .5s;
+}
+
+.bmi-value{
+    display: flex;
+    flex-direction: column;
+}
+
+.bmi-value div{
+    padding: 15px;
+    padding-bottom: 15px;
+}
+.bmi-value h1{
+    padding: 15px;
+    margin: 0;
+    padding-top: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.result{
+    margin-left: 40px;
+    padding-right: 10px;
+}
+
+.bmi-value h3{
+    padding-left: 10px;
+}
+
+.wel-container{
+    color: white;
+    background-color: #F63568;
+    border-radius: 10px;
+    border-top-right-radius: 50px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.wel-container div{
+    margin: 10px 0;
+    font-size: 14px;
+    padding: 10px;
+    padding-top: 0;
+}
+.wel-container h5{
+    padding: 10px;
+    padding-bottom: 0;
+    margin: 0;
+}
