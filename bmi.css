@@ -6,41 +6,33 @@ body{
 }
 
 .header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
     font-family: 'Montaga';
     text-align: center;
-    background-color: #F63568;
     color: white;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-    margin-top: 0;
+    margin: 0;
     padding:15px;
 }
-
 h1,h2{  
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(32, 65, 114);
-    transition: .4s;
-}
-h1:hover,h2:hover{
-    transform: scale(1.1);
+    transition: .25s;
 }
 
 .main-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 40px;
-    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 40px;
+    gap: 3vw;
 }
-
+.main-grid>div{
+    flex: 1;
+    justify-content: space-between;
+}
 .bmi-intro{
     font-family: 'Montaga';
     border-radius: 20px;
-    height: 25em;
     padding: 20px;
-    margin-right: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +41,8 @@ h1:hover,h2:hover{
 }
 .bmi-intro div{
     font-size: 1.1em;
-    color: rgb(104, 104, 104);
+    text-align: justify;
+    color: rgb(28, 28, 28);
 }
 .img-container{
     margin-top: 20px;
@@ -69,42 +62,22 @@ h1:hover,h2:hover{
     margin-left: 40px;
     background-color: white;
 }
-@media (max-width:850px) {
-    .main-grid{
-        grid-template-columns: 1fr;
-        margin-top: 30px;
-    }
-    .bmi-intro,.bmi-calc-container{
-        margin: 20px 0px;
-    }
-    body{
-        overflow: auto;
-    }
-    .header{
-        margin:0 ;
-    }
-}
 
 .weight-container,.height-container{
-    font-family: cursive;
+    font-family: 'Montaga';
+    color: rgb(28, 28, 28);
     margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.weight-container div,.height-container div{
-    margin-left: 10px;
-}
-input:hover,select:hover{
-    transform: scale(1.1);
-    margin:0 10px;
+    gap: 10px;
 }
 input,select{
     border:2px solid black;
     cursor: pointer;
     padding: 10px;
     font-size: 0.7em;
-    transition: .5s;
+    transition: .25s;
     border-radius: 10px;
 }
 
@@ -126,11 +99,11 @@ button{
     margin-top: 15px;
     margin-bottom: 30px;
     box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
-    transition: .1s;
+    transition: .25s;
 }
 button:hover{
-    transform: scale(1.1);
-    filter: brightness(1.5);
+    transform: scale(1.02);
+    filter: brightness(1.2);
 }
 
 .bmi-calc{
@@ -150,17 +123,17 @@ i{
     border-radius: 10px;
     border-top-right-radius: 50px;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     transition: .5s;
+    width: 100%;
 }
 
 .bmi-value{
     display: flex;
     flex-direction: column;
+    text-wrap: nowrap;
 }
 
 .bmi-value div{
@@ -175,8 +148,8 @@ i{
 }
 
 .result{
-    margin-left: 40px;
-    padding-right: 10px;
+    padding: 0;
+    margin: 15px;
 }
 
 .bmi-value h3{
@@ -184,6 +157,7 @@ i{
 }
 
 .wel-container{
+    width: 100%;
     color: white;
     background-color: #F63568;
     border-radius: 10px;
@@ -200,4 +174,41 @@ i{
     padding: 10px;
     padding-bottom: 0;
     margin: 0;
+}
+
+@media (max-width:965px) {
+    .main-grid{
+        flex-direction: column;
+        min-width: 0px;
+        gap: 30px;
+    }
+    .header{
+        margin:0 ;
+    }
+    body{
+        overflow: auto;
+    }
+    .bmi-intro{
+        min-width: 0px;
+    }
+    .bmi-calc-container{
+        margin: 0;
+    }
+}
+@media (width<500px) {
+    .header{
+        display: none;
+    }
+    .main-grid{
+        gap: 0;
+        padding: 0;
+    }
+    .bmi-intro,.bmi-calc-container{
+        border-radius:0 ;
+        box-shadow: none;
+        margin: 0;
+    }
+    input{
+        width: 50%;
+    }
 }

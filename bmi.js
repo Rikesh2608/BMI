@@ -6,6 +6,7 @@ const resultHtml=document.querySelector('.result');
 const bmivalue=document.querySelector('.bmi-value');
 const wel_container=document.querySelector('.wel-container');
 const btnContainer=document.querySelector('.btn-container');
+const resultContainerEl=document.querySelector(".result-container");
 
 function btnEvent(){
     const btn = document.querySelector('.btn');
@@ -37,6 +38,11 @@ heightInput.addEventListener('keydown',(event)=>{
 });
 
 function bmicalc(){
+    resultContainerEl.style=`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    `;
     let weightType=weightEl.value;
     let heightType=heightEl.value;
     let height = parseFloat(heightInput.value);
@@ -107,6 +113,7 @@ function bmicalc(){
 function clear_value(){
     let clear=document.querySelector('.clear');
     clear.addEventListener('click',()=>{
+        resultContainerEl.style=`display: none`;
         heightInput.value=``;
         weightInput.value='';
         bmivalue.innerHTML=``;
@@ -122,20 +129,5 @@ function clear_value(){
     });
 }
 
-header();
 
 
-
-function header(){
-    const headerhtml=document.querySelector('.header');
-    let head="Body Mass Index";
-    let i=1;
-
-    setInterval(()=>{
-        headerhtml.innerHTML=`${head.slice(0,i)}`;
-        if(i==head.length){
-            i=0;
-        }
-        i++;
-    },300);
-}
