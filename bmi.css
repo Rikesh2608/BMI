@@ -133,7 +133,6 @@ i{
 .bmi-value{
     display: flex;
     flex-direction: column;
-    text-wrap: nowrap;
 }
 
 .bmi-value div{
